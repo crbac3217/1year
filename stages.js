@@ -132,7 +132,10 @@ const STAGES = [
       { dial: 1, dialColors: ['red'],   answerHash: '2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3' }  // 8
     ],
     failMsg: '계산이 조금 어긋난 것 같아. 색깔과 수식이 짝이 맞는지 다시 볼까?',
-    hints: ['[힌트 placeholder]'],
+    hints: [
+      '각 색깔의 의미를 잘 이해해 보세요.',
+      '계산의 순서를 주의하세요.'
+    ],
     nextStory: '좋아, 이게 마지막 파편인 것 같아.\n\n이 사진에 있는 곳에 마지막 파편들이 있을 거야. 그걸 통해 마지막 문제를 풀어줘.',
     nextImage: 'images/sample.svg' // 마지막 파편들이 있는 장소 사진
   },
