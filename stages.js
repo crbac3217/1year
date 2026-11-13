@@ -128,9 +128,9 @@ const STAGES = [
     row: true, // 가로 정렬. 자릿수가 다르면 각 필드의 dial 값을 바꾸세요 (현재 1자리)
     fields: [
       { dial: 1, dialColors: ['green'], answerHash: 'ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d' }, // 5
-      { dial: 1, dialColors: ['black'], answerHash: 'e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683' }, // 6
-      { dial: 1, dialColors: ['blue'],  answerHash: '7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451' }, // 7
-      { dial: 1, dialColors: ['red'],   answerHash: '2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3' }  // 8
+      { dial: 1, dialColors: ['black'], answerHash: '4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a' }, // 4
+      { dial: 1, dialColors: ['blue'],  answerHash: '2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3' }, // 8
+      { dial: 1, dialColors: ['red'],   answerHash: '4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce' }  // 3
     ],
     failMsg: '계산이 조금 어긋난 것 같아. 색깔과 수식이 짝이 맞는지 다시 볼까?',
     hints: [
