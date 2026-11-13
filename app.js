@@ -271,7 +271,7 @@ function buildScan(st, body) {
   let done = false;
 
   const accept = async text => {
-    if (!(window.crypto && crypto.subtle)) { msg.textContent = 'HTTPS 또는 localhost 에서 열어주세요.'; return false; }
+    if (!(window.crypto && crypto.subtle)) { msg.className = 'msg'; msg.textContent = 'HTTPS(또는 localhost) 주소로 열어야 확인할 수 있어요.'; return null; }
     if ((await sha(text)) !== st.answerHash) return false;
     done = true;
     msg.className = 'msg ok'; msg.textContent = '확인했어요!';
@@ -285,7 +285,7 @@ function buildScan(st, body) {
     manual.remove();
     const inp = $('input'); inp.placeholder = 'QR 코드 글자'; inp.autocapitalize = 'off'; inp.spellcheck = false;
     const ok = $('button', '', '확인');
-    ok.onclick = async () => { if (!(await accept(inp.value))) msg.textContent = '이 코드가 아닌 것 같아요.'; };
+    ok.onclick = async () => { if ((await accept(inp.value)) === false) { msg.className = 'msg'; msg.textContent = '이 코드가 아닌 것 같아요.'; } };
     body.insertBefore(inp, msg); body.insertBefore(ok, msg);
   };
 
@@ -295,7 +295,7 @@ function buildScan(st, body) {
     try {
       stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' } }, audio: false });
     } catch (e) {
-      msg.textContent = '카메라를 켤 수 없어요. 권한을 확인하거나 직접 입력해 주세요.';
+      msg.textContent = window.isSecureContext ? '카메라를 켤 수 없어요. 권한을 확인하거나 직접 입력해 주세요.' : 'HTTPS 주소가 아니라서 카메라를 켤 수 없어요.';
       manual.style.display = ''; start.disabled = false; return;
     }
     start.remove();
@@ -319,9 +319,11 @@ function buildScan(st, body) {
       const code = jsQR(ctx.getImageData(0, 0, w, h).data, w, h, { inversionAttempts: 'dontInvert' });
       if (!code || !code.data) return;
       busy = true;
-      if (!(await accept(code.data)) && code.data !== lastBad) {
+      const r = await accept(code.data);
+      if (r === false && code.data !== lastBad) {
         lastBad = code.data; msg.className = 'msg';
-        msg.textContent = '이 QR은 아닌 것 같아요. 다른 곳에 있는 걸까요?';
+        let dbg = ''; try { if (localStorage.getItem('anniv-debug') === '1') dbg = ' [' + code.data + ']'; } catch (e) {}
+        msg.textContent = '이 QR은 아닌 것 같아요. 다른 곳에 있는 걸까요?' + dbg;
       }
       busy = false;
     }, 200);
