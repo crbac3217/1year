@@ -44,7 +44,7 @@ const STAGES = [
       '가져가야 하는 동물 카드는 까마귀입니다.'
     ],
     nextStory: '역시 가장 최근의 기억이라 그런지 잘 기억하네. 좋아!\n\n너랑 나, 두 사람의 점수 잊지 마. 곧 쓰일 거야.\n\n이 사진이 가리키는 곳에서 작은 열쇠를 챙겨서 지하 5층 스토리지로 와. 다음 기억은 거기 있어.',
-    nextImage: 'images/sample.svg' // 작은 열쇠 1 위치
+    nextImage: 'images/image1.jpg' // 작은 열쇠 1 위치
   },
   {
     id: 3, title: '지하 5층 스토리지', type: 'qr-scan',
