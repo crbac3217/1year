@@ -1,5 +1,5 @@
 // 파일을 수정해서 재배포할 때는 CACHE 버전을 올리세요.
-const CACHE = 'anniv-v41';
+const CACHE = 'anniv-v42';
 const ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,9 @@ const ASSETS = [
   './images/image3.jpg',
   './images/image4.jpg',
   './images/imagelast.jpg',
+  './images/sym-one.svg',
+  './images/sym-three.svg',
+  './images/sym-heart.svg',
   './tools/hash.html'
   // lib/ 에 라이브러리를 추가하면 여기에도 적어주세요.
 ];
