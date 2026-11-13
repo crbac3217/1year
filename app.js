@@ -522,6 +522,12 @@ window.addEventListener('hashchange', () => { if (handleHash()) show(state.i); }
 function setupOffline() {
   const badge = document.getElementById('badge');
   if (!('serviceWorker' in navigator)) { badge.textContent = '오프라인 미지원'; return; }
+  // 새 버전이 설치되어 제어권을 넘겨받으면 한 번 자동 새로고침 (처음 설치할 때는 제외)
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (hadController && !reloaded) { reloaded = true; location.reload(); }
+  });
   navigator.serviceWorker.addEventListener('message', e => {
     const d = e.data;
     if (!d || d.total == null) return;
