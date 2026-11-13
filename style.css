@@ -1,0 +1,112 @@
+:root { --bg:#0b0f14; --fg:#d7e3ea; --accent:#3fd0c9; --muted:#6c7f8a; --card:#121a22; --err:#e8a0a0; }
+body[data-theme="warm"] { --bg:#2a1710; --fg:#fff1e0; --accent:#ffb36b; --muted:#c79a7a; --card:#3b2217; --err:#ffd0b0; }
+
+* { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { margin:0; min-height:100%; background:var(--bg); color:var(--fg); transition:background .8s, color .8s; }
+body { font-family:-apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; line-height:1.7;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+
+#app { max-width:480px; margin:0 auto; padding:56px 22px 40px; min-height:100vh; opacity:0; transition:opacity .5s; }
+#app.show { opacity:1; }
+
+#badge { position:fixed; top:calc(env(safe-area-inset-top) + 8px); right:10px; font-size:11px; color:var(--muted);
+  background:var(--card); padding:2px 9px; border-radius:10px; z-index:10; }
+#badge.ok { color:var(--accent); }
+
+.step { font-size:12px; letter-spacing:.2em; color:var(--muted); font-family:ui-monospace, Menlo, monospace; }
+h1 { font-size:22px; margin:6px 0 18px; color:var(--accent); }
+.story { white-space:pre-wrap; font-size:17px; min-height:5em; }
+.story.typing::after { content:"▌"; color:var(--accent); animation:blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity:0; } }
+
+.body { margin-top:24px; display:flex; flex-direction:column; gap:12px; opacity:0; transition:opacity .5s; }
+.body.show { opacity:1; }
+
+label { font-size:13px; color:var(--muted); }
+input { width:100%; padding:14px; font-size:18px; background:var(--card); color:var(--fg);
+  border:1px solid var(--muted); border-radius:10px; outline:none; }
+input:focus { border-color:var(--accent); }
+
+button { font:inherit; font-size:17px; padding:14px; border-radius:10px; border:0; cursor:pointer;
+  background:var(--accent); color:var(--bg); font-weight:700; }
+button.ghost { background:transparent; color:var(--muted); border:1px solid var(--muted); font-weight:400; font-size:15px; padding:10px; }
+button:disabled { opacity:.5; }
+
+.msg { min-height:1.5em; color:var(--err); font-size:15px; }
+.msg.ok { color:var(--accent); }
+.hints { display:flex; flex-direction:column; gap:8px; }
+.hint { background:var(--card); border-left:3px solid var(--accent); padding:10px 12px; border-radius:6px; font-size:15px; animation:fadein .5s; }
+@keyframes fadein { from { opacity:0; } to { opacity:1; } }
+.shake { animation:shake .35s; }
+@keyframes shake { 25% { transform:translateX(-8px); } 75% { transform:translateX(8px); } }
+
+/* AR */
+#arbox { position:relative; width:100%; aspect-ratio:3/4; background:#000; border-radius:12px; overflow:hidden; }
+#arbox video { width:100%; height:100%; object-fit:cover; }
+#arobj { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  opacity:0; transition:opacity .6s; pointer-events:none; text-align:center; padding:20px; }
+#arobj.on { opacity:1; }
+#arobj .icon { font-size:84px; filter:drop-shadow(0 0 18px var(--accent)); animation:float 2s ease-in-out infinite; }
+#arobj .txt { background:rgba(0,0,0,.6); padding:6px 12px; border-radius:8px; font-size:15px; }
+@keyframes float { 50% { transform:translateY(-10px); } }
+#arinfo { position:absolute; left:8px; bottom:8px; right:8px; font:12px ui-monospace, monospace; color:#9fe; text-shadow:0 0 4px #000; }
+#arbox.got #arobj .icon { animation:pop .8s; font-size:110px; }
+@keyframes pop { 0% { transform:scale(.3); } 60% { transform:scale(1.3); } 100% { transform:scale(1); } }
+
+.photo { width:100%; border-radius:12px; border:1px solid var(--muted); animation:fadein 1s; }
+
+#app { padding-bottom:90px; }
+#nav { position:fixed; left:0; right:0; bottom:0; display:flex; gap:8px; justify-content:center; align-items:center;
+  padding:8px 12px calc(env(safe-area-inset-bottom) + 8px); background:var(--card); border-top:1px solid var(--muted); z-index:10; }
+#nav button { background:transparent; color:var(--fg); border:1px solid var(--muted); font-size:15px; padding:10px 16px; font-weight:400; }
+#nav button.mid { flex:1; max-width:240px; font-size:13px; color:var(--muted); }
+#nav button:not(:disabled).mid { color:var(--accent); border-color:var(--accent); }
+#nav button:disabled { opacity:.35; }
+.recap { margin-top:22px; padding-top:14px; border-top:1px dashed var(--muted); display:flex; flex-direction:column; gap:10px; }
+.recap .story { font-size:15px; min-height:0; }
+
+/* 숫자 자물쇠 */
+.dial { display:flex; gap:8px; justify-content:center; padding:12px; background:linear-gradient(#0003,#0000,#0003),var(--card);
+  border:2px solid var(--muted); border-radius:14px; }
+.wheel { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.wheel button { background:transparent; color:var(--muted); border:0; font-size:20px; padding:4px 14px; font-weight:400; }
+.wheel .digit { width:52px; padding:8px 0; text-align:center; font:700 34px ui-monospace, Menlo, monospace; color:var(--accent);
+  background:#0006; border-top:1px solid var(--muted); border-bottom:1px solid var(--muted); border-radius:6px;
+  touch-action:none; user-select:none; -webkit-user-select:none; cursor:ns-resize; }
+.dial-label { margin-top:4px; }
+
+/* QR 스캔 */
+#qrbox { position:relative; width:100%; aspect-ratio:1/1; background:#000; border-radius:12px; overflow:hidden; }
+#qrbox video { width:100%; height:100%; object-fit:cover; }
+#qrbox::after { content:""; position:absolute; inset:18%; border:2px solid var(--accent); border-radius:14px; box-shadow:0 0 0 999px #0005; }
+
+/* 테스트 패널 */
+#dbg { position:fixed; right:10px; bottom:calc(env(safe-area-inset-bottom) + 70px); z-index:20; display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+#dbg > button { width:44px; height:44px; border-radius:50%; padding:0; font-size:20px; opacity:.85; }
+#dbg .panel { background:var(--card); border:1px solid var(--accent); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:6px; width:240px; }
+#dbg .panel[hidden] { display:none; }
+#dbg .panel button { font-size:14px; padding:9px; }
+#dbg select { font-size:15px; padding:8px; background:var(--bg); color:var(--fg); border:1px solid var(--muted); border-radius:8px; }
+
+/* 바퀴별 색깔 테두리 */
+.wheel.green .digit { border:2px solid #3ddc84; box-shadow:0 0 10px #3ddc8477; color:#3ddc84; }
+.wheel.black .digit { border:2px solid #000; background:#000; color:#fff; box-shadow:0 0 0 1px #555; }
+.wheel.blue .digit { border:2px solid #4aa3ff; box-shadow:0 0 10px #4aa3ff77; color:#4aa3ff; }
+.wheel.red .digit { border:2px solid #ff5c5c; box-shadow:0 0 10px #ff5c5c77; color:#ff5c5c; }
+
+/* 색깔 테두리 입력칸 */
+input.c-green { border:2px solid #3ddc84; }
+input.c-black { border:2px solid #ddd; background:#000; }
+input.c-blue  { border:2px solid #4aa3ff; }
+input.c-red   { border:2px solid #ff5c5c; }
+
+/* 가로 정렬 (사진/자물쇠) */
+.row { display:flex; gap:10px; justify-content:center; align-items:flex-start; }
+.cell { flex:1; min-width:0; display:flex; flex-direction:column; align-items:center; gap:8px; }
+.cell .photo { width:100%; aspect-ratio:1/1; object-fit:cover; }
+.row .dial { padding:8px 4px; }
+.row .wheel .digit { width:40px; }
+.row .wheel button { padding:2px 10px; }
+.thumb { cursor:zoom-in; }
+#lb { position:fixed; inset:0; background:#000d; display:flex; align-items:center; justify-content:center; z-index:30; }
+#lb img { max-width:95%; max-height:90%; border-radius:10px; }
