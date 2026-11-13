@@ -114,7 +114,11 @@ const STAGES = [
     story: '',
     scanLabel: '📷 QR 스캔',
     answerHash: '2d7fa04f0a0600a3ac89516336f4f5296ef7889ffeca6e9ef9097f5386f59855', // memory-05
-    hints: ['[힌트 placeholder]'],
+    hints: [
+      '본넷을 잘 찾아보세요. 예상치 못한 위치에 힌트가 있을 수 있어요.',
+      '후레쉬를 잘 확인하세요.',
+      '힌트는 본넷 커버 안쪽에 있습니다.'
+    ],
     nextStory: ''
   },
   {
