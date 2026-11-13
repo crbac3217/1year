@@ -210,7 +210,7 @@ function makeDial(n, colors) {
 
 function buildInputs(st, body) {
   const fields = st.type === 'multi-input' ? st.fields
-    : [{ label: '', answerHash: st.answerHash, placeholder: st.placeholder, dial: st.dial, dialColors: st.dialColors, uppercase: st.uppercase }];
+    : [{ label: '', answerHash: st.answerHash, placeholder: st.placeholder, dial: st.dial, dialColors: st.dialColors, uppercase: st.uppercase, lettersOnly: st.lettersOnly }];
   const inputs = [];
   let host = body;
   if (st.row) { host = $('div', 'row'); body.append(host); }
@@ -228,6 +228,15 @@ function buildInputs(st, body) {
     inp.placeholder = f.placeholder || st.placeholder || '정답 입력';
     inp.autocomplete = 'off'; inp.autocapitalize = f.uppercase ? 'characters' : 'off'; inp.spellcheck = false;
     if (f.uppercase) inp.style.textTransform = 'uppercase';
+    if (f.lettersOnly) {
+      inp.inputMode = 'text'; inp.setAttribute('autocorrect', 'off');
+      inp.addEventListener('input', e => {
+        if (e.isComposing) return;
+        const v = inp.value.replace(/[^A-Za-z]/g, '');
+        if (v !== inp.value) inp.value = v;
+      });
+      inp.addEventListener('compositionend', () => { inp.value = inp.value.replace(/[^A-Za-z]/g, ''); });
+    }
     if (f.numeric) { inp.inputMode = 'numeric'; inp.pattern = '[0-9]*'; }
     if (f.color) inp.classList.add('c-' + f.color);
     cell.append(inp);
