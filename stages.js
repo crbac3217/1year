@@ -103,7 +103,7 @@ const STAGES = [
   },
   {
     id: 8, title: '열쇠 상자', type: 'text-input',
-    story: '이 열쇠 상자 안에 내가 중요한 걸 넣어 둔 것 같은데, 뭐였는지 기억이 안 나네…\n비밀번호는 뭔가 중요한 날짜였던 것 같아.\n\n[퀴즈 placeholder]',
+    story: '이 열쇠 상자 안에 내가 중요한 걸 넣어 둔 것 같은데, 뭐였는지 기억이 안 나네…\n비밀번호는 뭔가 중요한 날짜였던 것 같아.',
     dial: 4,
     answerHash: '71af0fdd2e7f62c1c351432a69fdf8f6579e9dce0c12c2b3af90f964540bdb83', // 1115
     failMsg: '상자가 열리지 않아. 우리에게 가장 중요한 날짜가 맞을까?',
