@@ -71,7 +71,7 @@ const STAGES = [
   },
   {
     id: 5, title: '우편함', type: 'qr-scan',
-    story: '우편함 열쇠로 메일을 열어 봐.\n차키와 작은 열쇠 3, 그리고 QR 코드가 들어 있을 거야.',
+    story: '우편함 열쇠로 메일을 열어 봐.\n차키와 작은 열쇠, 그리고 QR 코드가 들어 있을 거야.',
     scanLabel: '📷 우편함 QR 스캔',
     answerHash: 'ea07c202b2a98e77d6cb7ae72b2d33dc033f1059308c9e8aee24d41e5717594b', // memory-03
     hints: ['우편함 안쪽, 차키 가까이에 QR이 있어요.'],
