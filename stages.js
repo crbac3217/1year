@@ -106,7 +106,7 @@ const STAGES = [
     dial: 4,
     answerHash: '71af0fdd2e7f62c1c351432a69fdf8f6579e9dce0c12c2b3af90f964540bdb83', // 1115
     failMsg: '상자가 열리지 않아. 우리에게 가장 중요한 날짜가 맞을까?',
-    hints: ['[힌트 1 placeholder]', '[힌트 2 placeholder]'],
+    hints: ['우리 둘 사이가 변한 날짜입니다'],
     nextStory: '기억났어! 한국에서 돌아오자마자 엘랑이 배터리가 나가서 고생했었지.\n\n이 후레쉬로 본넷 근처를 잘 찾아봐. 뭔가 실마리가 보일 거야.'
   },
   {
