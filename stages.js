@@ -149,7 +149,11 @@ const STAGES = [
       { image: 'images/sample.svg', dial: 1, answerHash: '4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce' }  // 3
     ],
     failMsg: '조금 어긋난 것 같아. 사진과 열쇠가 짝이 맞는지 다시 볼까?',
-    hints: ['[힌트 placeholder]'],
+    hints: [
+      '지금까지 모아온 조각들이 힌트가 됩니다.',
+      '모아온 조각들 중 중복되는 조각이 있는지 확인하세요.',
+      '조각들과 사진들을 비교하세요.'
+    ],
     nextStory: '이제 거의 다 모은 것 같네. 마지막 기억의 파편 몇 조각만 모으면 돼.\n\n우리가 1년 동안 가장 가깝게 지낸 사람들을 만나러 가자.\n사진 속 장소에서, 그들이 있는 곳으로 갈 수 있는 열쇠를 찾을 수 있을 거야.',
     nextImage: 'images/sample.svg' // 자동차 내 fob key 숨겨둔 곳
   }

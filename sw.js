@@ -1,5 +1,5 @@
 // 파일을 수정해서 재배포할 때는 CACHE 버전을 올리세요.
-const CACHE = 'anniv-v28';
+const CACHE = 'anniv-v29';
 const ASSETS = [
   './',
   './index.html',
