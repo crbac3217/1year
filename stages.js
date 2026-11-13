@@ -80,10 +80,10 @@ const STAGES = [
   {
     id: 6, title: '마당의 기억', type: 'text-input',
     story: '차키를 보자마자 차로 달려가고 싶겠지. 하지만 그 전에 해결할 일이 있어.\n\n파스타 대회 때 우리 집 마당에서 잠깐 놀았잖아. 그때도 뭔가를 떨어뜨렸던 것 같아.\n\n다음 사진이 네가 어디로 가야 하는지 알려줄 거야.',
-    image: 'images/sample.svg', // geometric climbing gym 사진
+    image: 'images/image3.jpg', // geometric climbing gym 사진
     dial: 4,
     dialColors: ['green', 'green', 'black', 'black'], // 초록 두 자리 + 검정 두 자리 (문구에 '손잡이' 언급 금지)
-    answerHash: '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', // 1234
+    answerHash: '3765c3e23aeefaf31c3e27e95895ef627fa688f9652d7efc6746af9fc45dbfb0', // 2958
     failMsg: '숫자가 조금 달라 보여. 사진 속 그곳을 다시 한 번 찬찬히 살펴볼까?',
     hints: [
       '그림에서 보이는 물체는 바깥에 있어요.',
