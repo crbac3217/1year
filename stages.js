@@ -156,6 +156,6 @@ const STAGES = [
       '조각들과 사진들을 비교하세요.'
     ],
     nextStory: '이제 거의 다 모은 것 같네. 마지막 기억의 파편 몇 조각만 모으면 돼.\n\n우리가 1년 동안 가장 가깝게 지낸 사람들을 만나러 가자.\n사진 속 장소에서, 그들이 있는 곳으로 갈 수 있는 열쇠를 찾을 수 있을 거야.',
-    nextImage: 'images/sample.svg' // 자동차 내 fob key 숨겨둔 곳
+    nextImage: 'images/reallast.jpg' // 자동차 내 fob key 숨겨둔 곳
   }
 ];
