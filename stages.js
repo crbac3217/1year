@@ -137,8 +137,8 @@ const STAGES = [
       '각 색깔의 의미를 잘 이해해 보세요.',
       '계산의 순서를 주의하세요.'
     ],
-    nextStory: '좋아, 이게 마지막 파편인 것 같아.\n\n이 사진에 있는 곳에 마지막 파편들이 있을 거야. 그걸 통해 마지막 문제를 풀어줘.',
-    nextImage: 'images/sample.svg' // 마지막 파편들이 있는 장소 사진
+    nextStory: '좋아, 이제 마지막 파편들을 찾으러 가면 될 것 같아.\n\n마지막 파편은 총 세 조각인 것 같아. 이 사진 속 장소에 있을 거야. 찾으러 가자!',
+    nextImage: 'images/imagelast.jpg' // 마지막 파편들이 있는 장소 사진
   },
   {
     id: 11, title: '마지막 조각', type: 'multi-input',
