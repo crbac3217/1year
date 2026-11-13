@@ -91,7 +91,7 @@ const STAGES = [
       '물체는 정문에서 나가면 보입니다.'
     ],
     nextStory: '꽤 익숙해진 모양이네, 이젠 제법 잘 찾는데?\n거의 다 모은 것 같으니 조금만 더 힘내자. 지금부턴 더 집중해야 할 거야.\n\n엘랑이 트렁크 안에 내가 중요한 물건을 넣어 뒀던 걸로 기억해. 지하 5층에서 보자.',
-    nextImage: 'images/sample.svg' // 작은 열쇠 4
+    nextImage: 'images/image4.jpg' // 엘란트라 트렁크 (작은 열쇠 4)
   },
   {
     id: 7, title: '자동차 트렁크', type: 'qr-scan',
