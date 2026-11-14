@@ -43,7 +43,7 @@ const STAGES = [
       '가져가야 하는 타일은 건물, 돌, 들판입니다.',
       '가져가야 하는 동물 카드는 까마귀입니다.'
     ],
-    nextStory: '역시 가장 최근의 기억이라 그런지 잘 기억하네. 좋아!\n\n누가 이겼는지, 몇 점이었는지 잊지 마. 곧 쓰일 거야.\n\n이 사진이 가리키는 곳에서 작은 열쇠를 챙겨서 지하 5층 스토리지로 와. 다음 기억은 거기 있어.',
+    nextStory: '역시 가장 최근의 기억이라 그런지 잘 기억하네. 좋아!\n\n누가 이겼는지, 몇 점이었는지 잊지 마. 곧 쓰일 거야.\n\n이 사진이 가리키는 곳에서 작은 열쇠를 챙겨서 지하 5층 스토리지로 와. 나가는 김에 우산도 꼭 챙기고! 다음 기억은 거기 있어.',
     nextImage: 'images/image1.jpg' // 작은 열쇠 1 위치
   },
   {
@@ -144,7 +144,7 @@ const STAGES = [
     story: '',
     row: true, // 사진 3장을 가로로. 자릿수가 다르면 dial 값을 바꾸세요 (현재 1자리)
     fields: [
-      { image: 'images/sym-one.svg',   dial: 1, answerHash: '4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce' }, // 원 하나 = 3
+      { image: 'images/sym-half.svg',  dial: 1, answerHash: '4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce' }, // 위 원 + 아래 반원 둘 = 3
       { image: 'images/sym-three.svg', dial: 1, answerHash: 'd4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35' }, // 원 세 개 = 2
       { image: 'images/sym-heart.svg', dial: 1, answerHash: 'ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d' }  // 하트 = 5
     ],
